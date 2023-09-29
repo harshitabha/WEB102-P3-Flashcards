@@ -1,0 +1,28 @@
+body {
+  background-image: url('https://img.freepik.com/free-vector/ocean-sea-waves-with-ripples_1017-30742.jpg?w=826&t=st=1695855510~exp=1695856110~hmac=fdcf4a6e650deefa6033f08c4a363e11bcbe1b117a61d04a98e73bbb58a81921');
+  background-size: cover;
+}
+
+#root {
+  padding: 1em;
+  color: black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.controlBtnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.controlBtn {
+  margin: 1em 0.5em;
+}
