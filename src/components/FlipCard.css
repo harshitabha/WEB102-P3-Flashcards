@@ -1,3 +1,101 @@
-.card {
-    border-radius: 5px;
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 500px;
+    height: 300px;
+    align-self: center;
+    margin-bottom: 5em;
+    margin-right: 5em;
 }
+
+.easy {
+    background-color: #9df69c;
+}
+
+.medium {
+    background-color: #ffe562;
+}
+
+.hard {
+    background-color: #ff7c7c;
+}
+
+/* used to position the front and back side */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+/* Do a veritical flip when the card is clicked */
+.flip .card-inner {
+    transform: rotateX(180deg);
+}
+
+/* Positio nthe front and back side */
+.card-front, .card-back {
+    position: absolute;
+    border-radius: 15px;
+
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /*for Safari*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-img {
+    width: 200px;
+    align-self: center;
+    border-radius: 10px;
+}
+
+/* Style the back side */
+.card-back {
+    transform: rotateX(180deg) translateY(60px);
+}
+
+/*
+This container is needed to position the front and back side
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+Do an horizontal flip when you move the mouse over the flip box container
+.flip-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+  Position the front and back side
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; Safari
+    backface-visibility: hidden;
+  }
+  
+  Style the front side (fallback if image is missing)
+  .card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  Style the back side
+  .card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }*/
