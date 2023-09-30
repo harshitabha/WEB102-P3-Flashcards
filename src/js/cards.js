@@ -1,5 +1,12 @@
 const cards = `[
     {
+        "difficulty": "easy",
+        "question": "Who was the first monster Percy killed",
+        "ans": "A fury",
+        "img": "https://static.wikia.nocookie.net/olympians/images/7/76/Furies.png/revision/latest/scale-to-width/360?cb=20181004005330",
+        "imgAlt": "Kindly ones"
+    },
+    {
         "difficulty": "hard",
         "question": "Why does Sally Jackson, Percy's mom, always make him blue food?",
         "ans": "Because Gabe once said there was no such thing as blue food, so she goes out of her way to make and eat blue",
@@ -40,13 +47,6 @@ const cards = `[
         "ans": "Zoe Nightshade",
         "img": "https://earthsky.org/upl/2023/02/Waxing-crescent-Jan-26-2023-Mandy-Daniels-800x640.jpg",
         "imgAlt": "Cresent Moon"
-    },
-    {
-        "difficulty": "easy",
-        "question": "Who was the first monster Percy killed",
-        "ans": "A fury",
-        "img": "https://static.wikia.nocookie.net/olympians/images/7/76/Furies.png/revision/latest/scale-to-width/360?cb=20181004005330",
-        "imgAlt": "Kindly ones"
     },
     {
         "difficulty": "easy",

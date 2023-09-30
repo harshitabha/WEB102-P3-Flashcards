@@ -1,12 +1,14 @@
 import {FaArrowRight, FaArrowLeft} from 'react-icons/fa'
 import { useState } from 'react'
 import FlipCard from './components/FlipCard'
-import getRandomCard from './js/cardGenerator'
+import {nextCard, prevCard, firstCard} from './js/cardGenerator'
 
 import './App.css'
 
 function App() {
-  const [data, setData] = useState(getRandomCard());
+  const [card, setCard] = useState(firstCard());
+  const handleNextBtn = () => { setCard(nextCard()); }
+  const handleBackBtn = () => { setCard(prevCard()); }
 
   return (
     <>
@@ -16,17 +18,17 @@ function App() {
     </div>
 
     <FlipCard 
-      difficulty={data.difficulty}
-      question={data.question}
-      ans={data.ans}
-      imgSrc={data.img}
-      imgAlt={data.imgAlt}/>
+      difficulty={card.difficulty}
+      question={card.question}
+      ans={card.ans}
+      imgSrc={card.img}
+      imgAlt={card.imgAlt}/>
 
     <div className="controlBtnContainer">
-      <button className="back controlBtn">
+      <button className="back controlBtn" onClick={handleBackBtn}>
         <FaArrowLeft />
       </button>
-      <button className="next controlBtn">
+      <button className="next controlBtn" onClick={handleNextBtn}>
         <FaArrowRight />
       </button>
     </div>
