@@ -15,7 +15,7 @@ function getRandomCard () {
         indexesDrawn = [];
     }
     //if a card has already been draw choose another random card
-    while (randIndex in indexesDrawn) randIndex = Math.floor(Math.random() * CARDS_JSON.length);
+    while (indexesDrawn.indexOf(randIndex) !== -1) randIndex = Math.floor(Math.random() * CARDS_JSON.length);
     
     indexesDrawn.push(randIndex);
     currentIndex = randIndex;
@@ -49,7 +49,7 @@ export function prevCard() {
 /* Gets the next card */
 export function nextCard() { 
     const indexInDarwnArr = indexesDrawn.indexOf(currentIndex);
-
+    
     if (indexInDarwnArr !== (indexesDrawn.length - 1)) {
         currentIndex = indexesDrawn[indexInDarwnArr + 1];
         return CARDS_JSON[currentIndex];
