@@ -3,7 +3,7 @@ const cards = `[
         "difficulty": "easy",
         "question": "Who was the first monster Percy killed",
         "ans": "A fury",
-        "img": "https://static.wikia.nocookie.net/olympians/images/7/76/Furies.png/revision/latest/scale-to-width/360?cb=20181004005330",
+        "img": "https://hollywoodnorthbuzz.com/wp-content/uploads/2022/06/percy-jackson-mrs-dodds.jpg",
         "imgAlt": "Kindly ones"
     },
     {
@@ -24,7 +24,7 @@ const cards = `[
         "difficulty": "medium",
         "question": "Who gave Annabeth the nickname 'Wise Girl'",
         "ans": "Clarrise La Rue",
-        "img": "https://vectorportal.com/storage/kKqVYrSfnMgToDQsXUiAow76cqrM7JueXJLshEjm.jpg",
+        "img": "https://img.freepik.com/premium-vector/spartan-helmet-easy-change-color-add-text-other-element_84382-333.jpg?w=2000",
         "imgAlt": "Spartan Helmet"
     },
     {
