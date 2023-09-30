@@ -1,7 +1,7 @@
 import {FaArrowRight, FaArrowLeft} from 'react-icons/fa'
 import { useState } from 'react'
 import FlipCard from './components/FlipCard'
-import {nextCard, prevCard, firstCard} from './js/cardGenerator'
+import {nextCard, prevCard, firstCard, totalCards} from './js/cardGenerator'
 
 import './App.css'
 
@@ -13,8 +13,9 @@ function App() {
   return (
     <>
     <div className="header">
-      <h1>Can you call yourself a Percy Jackson fan?</h1>
-      <h2>Find out now!</h2>
+      <h1 className='title'>Can you call yourself a Percy Jackson fan?</h1>
+      <h2 className='subtitle'>Find out now!</h2>
+      <h2 className='subtitle'>Total cards: {totalCards()}</h2>
     </div>
 
     <FlipCard 

@@ -67,3 +67,6 @@ export function firstCard() {
     }
     return CARDS_JSON[0]; 
 }
+
+/** Gets the total number of cards */
+export function totalCards() { return CARDS_JSON.length; }

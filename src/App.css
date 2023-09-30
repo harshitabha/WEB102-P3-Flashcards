@@ -26,3 +26,11 @@ body {
 .controlBtn {
   margin: 1em 0.5em;
 }
+
+.title {
+  font-size: 36px;
+}
+
+.subtitle {
+  font-size: 18px;;
+}
