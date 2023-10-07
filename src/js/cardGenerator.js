@@ -2,7 +2,8 @@ import CARD_DATA from "./cards"
 
 // create a list of objects to store data about the various questions cards
 const CARDS_JSON = JSON.parse(CARD_DATA);
-let indexesDrawn = [];
+let allDrawnCards = [];
+let currentRoundCards = [];
 let lastIndex;
 let currentIndex;
 
@@ -10,21 +11,22 @@ let currentIndex;
 function getRandomCard () {
     let randIndex = Math.floor(Math.random() * CARDS_JSON.length);
     // reset the cards if all of them have been drawn
-    if (indexesDrawn.length == CARDS_JSON.length) {
-        lastIndex = indexesDrawn[-1];
-        indexesDrawn = [];
+    if (allDrawnCards.length == CARDS_JSON.length) {
+        lastIndex = allDrawnCards[-1];
+        currentRoundCards = [];
     }
     //if a card has already been draw choose another random card
-    while (indexesDrawn.indexOf(randIndex) !== -1) randIndex = Math.floor(Math.random() * CARDS_JSON.length);
+    while (currentRoundCards.indexOf(randIndex) !== -1) randIndex = Math.floor(Math.random() * CARDS_JSON.length);
     
-    indexesDrawn.push(randIndex);
+    allDrawnCards.push(randIndex);
+    currentRoundCards.push(randIndex);
     currentIndex = randIndex;
     return CARDS_JSON[randIndex];
 }
 
 /* Gets the last card drawn */
 export function prevCard() {
-    const indexInDarwnArr = indexesDrawn.indexOf(currentIndex);
+    const indexInDarwnArr = allDrawnCards.indexOf(currentIndex);
 
     // various consitions
     const isFirstCard = indexInDarwnArr === 0 && lastIndex === undefined;
@@ -40,7 +42,7 @@ export function prevCard() {
         return CARDS_JSON(lastIndex); 
     }
     else {
-        currentIndex = indexesDrawn[indexInDarwnArr - 1];
+        currentIndex = allDrawnCards[indexInDarwnArr - 1];
         return CARDS_JSON[currentIndex];
     }
 
@@ -48,10 +50,10 @@ export function prevCard() {
 
 /* Gets the next card */
 export function nextCard() { 
-    const indexInDarwnArr = indexesDrawn.indexOf(currentIndex);
+    const indexInDarwnArr = allDrawnCards.indexOf(currentIndex);
     
-    if (indexInDarwnArr !== (indexesDrawn.length - 1)) {
-        currentIndex = indexesDrawn[indexInDarwnArr + 1];
+    if (indexInDarwnArr !== (allDrawnCards.length - 1)) {
+        currentIndex = allDrawnCards[indexInDarwnArr + 1];
         return CARDS_JSON[currentIndex];
     } else {
         return getRandomCard();
@@ -61,8 +63,8 @@ export function nextCard() {
 
 // Return the first card
 export function firstCard() { 
-    if (indexesDrawn.indexOf(0) === -1) {
-        indexesDrawn.push(0);
+    if (allDrawnCards.indexOf(0) === -1) {
+        allDrawnCards.push(0);
         currentIndex = 0;
     }
     return CARDS_JSON[0]; 

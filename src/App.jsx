@@ -7,14 +7,25 @@ import './App.css'
 
 function App() {
   const [card, setCard] = useState(firstCard());
-  const handleNextBtn = () => { setCard(nextCard()); }
-  const handleBackBtn = () => { setCard(prevCard()); }
+  const [isFront, setCardFront] = useState('true');
+  
+  const flipCard = () => {
+      setCardFront(!isFront);
+  }
+
+  const handleNextBtn = () => { 
+    setCard(nextCard());
+    if (!isFront) flipCard();
+  }
+  const handleBackBtn = () => { 
+    setCard(prevCard()); 
+    if (!isFront) flipCard();
+  }
 
   return (
     <>
     <div className="header">
-      <h1 className='title'>Can you call yourself a Percy Jackson fan?</h1>
-      <h2 className='subtitle'>Find out now!</h2>
+      <h1 className='title'>Science Review</h1>
       <h2 className='subtitle'>Total cards: {totalCards()}</h2>
     </div>
 
@@ -23,7 +34,9 @@ function App() {
       question={card.question}
       ans={card.ans}
       imgSrc={card.img}
-      imgAlt={card.imgAlt}/>
+      imgAlt={card.imgAlt}
+      cardFlipedHandler={flipCard}
+      cardFront={isFront}/>
 
     <div className="controlBtnContainer">
       <button className="back controlBtn" onClick={handleBackBtn}>

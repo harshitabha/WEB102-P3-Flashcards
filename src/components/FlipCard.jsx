@@ -1,13 +1,9 @@
-import { useState } from 'react';
 import './FlipCard.css'
 
 export default function FlipCard (props) {
-    const [isFront, setCardFront] = useState('true');
-    const flipCard = () => {
-        setCardFront(!isFront);
-    }
+    
     return (
-        <div className={`flip-card ${isFront ? null : "flip"}`} onClick={flipCard}>
+        <div className={`flip-card ${props.cardFront ? null : "flip"}`} onClick={props.cardFlipedHandler}>
             <div className="card-inner">
                 <div className={"card-front " + props.difficulty}>
                     <p className="ques card-text">
