@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -33,4 +34,38 @@ body {
 
 .subtitle {
   font-size: 18px;;
+}
+
+.ansContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#guessAns {
+  background-color: white;
+  border: grey;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 3.5vh;
+  margin: 1vh 0;
+  padding: 5px;
+  font: inherit;
+  color: black;
+
+}
+
+.inputLabel {
+  font: inherit;
+}
+
+.button {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
+}
+
+.resultContainer {
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
 }

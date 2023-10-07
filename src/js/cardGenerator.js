@@ -72,3 +72,8 @@ export function firstCard() {
 
 /** Gets the total number of cards */
 export function totalCards() { return CARDS_JSON.length; }
+
+/** Check if the guess and is correct */
+export function cardAnsCorrect(guess) {
+    
+}
