@@ -2,7 +2,7 @@
 
 Submitted by: Harshita Bhardwaj
 
-This web app: This web app tests the knowledge of a Percy Jackson fan. Test your triva from basic knowledge of what Percy's weapon of choice turns into to more niche knowledge to see if you really are a Percy Jackson fan.
+This web app: This web app help people review basic science knownlege for different disaplines of science.
 
 Time spent: 6 hours spent in total
 
@@ -10,10 +10,10 @@ Time spent: 6 hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **The user can enter their guess in a box before seeing the flipside of the card**
-- [ ] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
-- [ ] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
-- [ ] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
+- [✅] **The user can enter their guess in a box before seeing the flipside of the card**
+- [✅] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [✅] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [✅] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<a href='https://imgur.com/a/1sj6h52.gif'>Video Walkthrough</a>
+<a href='https://imgur.com/a/Saq2OTP.gif'>Video Walkthrough</a>
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ScreenToGif

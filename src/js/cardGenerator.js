@@ -4,57 +4,49 @@ import CARD_DATA from "./cards"
 const CARDS_JSON = JSON.parse(CARD_DATA);
 let allDrawnCards = [];
 let currentRoundCards = [];
-let lastIndex;
-let currentIndex;
+let currentIndex = 0;
 
 /* Gets a random card to display */
 function getRandomCard () {
     let randIndex = Math.floor(Math.random() * CARDS_JSON.length);
     // reset the cards if all of them have been drawn
-    if (allDrawnCards.length == CARDS_JSON.length) {
-        lastIndex = allDrawnCards[-1];
-        currentRoundCards = [];
-    }
+    if (allDrawnCards.length == CARDS_JSON.length) currentRoundCards = [];
+    
     //if a card has already been draw choose another random card
     while (currentRoundCards.indexOf(randIndex) !== -1) randIndex = Math.floor(Math.random() * CARDS_JSON.length);
     
     allDrawnCards.push(randIndex);
     currentRoundCards.push(randIndex);
-    currentIndex = randIndex;
+    currentIndex++;
     return CARDS_JSON[randIndex];
 }
 
 /* Gets the last card drawn */
 export function prevCard() {
-    const indexInDarwnArr = allDrawnCards.indexOf(currentIndex);
+    console.log(`prevBtn\ncursor: ${currentIndex}\n`, allDrawnCards);
 
     // various consitions
-    const isFirstCard = indexInDarwnArr === 0 && lastIndex === undefined;
-    const allCardsHaveBeenDrawn = indexInDarwnArr === 0 && lastIndex !== undefined;
-
+    const isFirstCard = currentIndex === 0;
 
     // get the last card from the save var lastIndex because the indexes arr has just been reset
     if (isFirstCard) {
         alert("This is the first card");
-        return CARDS_JSON[currentIndex];
-    } else if (allCardsHaveBeenDrawn) {
-        currentIndex = lastIndex; 
-        return CARDS_JSON(lastIndex); 
-    }
+        return CARDS_JSON[allDrawnCards[currentIndex]];
+    } 
     else {
-        currentIndex = allDrawnCards[indexInDarwnArr - 1];
-        return CARDS_JSON[currentIndex];
+        currentIndex--;
+        console.log(`cursor: ${currentIndex}\ngoing to `, CARDS_JSON[currentIndex])
+        return CARDS_JSON[allDrawnCards[currentIndex]];
     }
 
 }
 
 /* Gets the next card */
 export function nextCard() { 
-    const indexInDarwnArr = allDrawnCards.indexOf(currentIndex);
-    
-    if (indexInDarwnArr !== (allDrawnCards.length - 1)) {
-        currentIndex = allDrawnCards[indexInDarwnArr + 1];
-        return CARDS_JSON[currentIndex];
+    console.log(`nextBtn\ncursor: ${currentIndex}\n`, allDrawnCards);
+    if (currentIndex !== (allDrawnCards.length - 1)) {
+        currentIndex++;
+        return CARDS_JSON[allDrawnCards[currentIndex]];
     } else {
         return getRandomCard();
     }
@@ -72,8 +64,3 @@ export function firstCard() {
 
 /** Gets the total number of cards */
 export function totalCards() { return CARDS_JSON.length; }
-
-/** Check if the guess and is correct */
-export function cardAnsCorrect(guess) {
-    
-}
